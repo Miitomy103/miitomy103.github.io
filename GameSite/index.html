@@ -28,11 +28,14 @@
     </div>
 
     <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Corinth.data",
-        frameworkUrl: "Build/Corinth.framework.js",
-        codeUrl: "Build/Corinth.wasm",
-      }).then(() => console.log("Unity loaded!"));
+createUnityInstance(document.querySelector("#unity-canvas"), {
+  dataUrl: "Build/Corinth.data",
+  frameworkUrl: "Build/Corinth.framework.js",
+  codeUrl: "Build/Corinth.wasm",
+  width: 960,
+  height: 540,
+}).then(() => console.log("Unity loaded!"));
+
     </script>
   </body>
 </html>
