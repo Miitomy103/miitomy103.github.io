@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unity WebGL Test</title>
+    <script src="./Build/Corinth.loader.js"></script>
+    <style>
+      body {
+        background-color: #222;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* 中央寄せ */
+        align-items: flex-start; /* 上寄せ（中央なら center） */
+        height: 100vh;
+      }
+
+      #unity-container {
+        width: 960px;
+        height: 540px;
+        background: #000; /* 読み込み中の背景色 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width="960" height="540"></canvas>
+    </div>
+
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Corinth.data",
+        frameworkUrl: "Build/Corinth.framework.js",
+        codeUrl: "Build/Corinth.wasm",
+      }).then(() => console.log("Unity loaded!"));
+    </script>
+  </body>
+</html>
