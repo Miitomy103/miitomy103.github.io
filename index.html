@@ -1,60 +1,391 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>なんもないよサイト</title>
-    <a href="./GameSite/index.html">会社概要へ</a>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column; /* 縦方向に配置 */
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .above-text {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 10px; /* 下に余白を追加 */
-        }
-        .center-text {
-            font-size: 24px;
-            color: #333;
-        }
-    </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8SC2GTLLP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F8SC2GTLLP');
-</script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="above-text"><h1>なんもないよ</h1></div>
-    <div class="center-text">
-        <p>　　　　　 　　／⌒ヽ<br>
 
-        　　⊂二二二（　＾ω＾）二⊃<br>
-        
-        　　　　　 　|　　　 / <br>
-        
-        　　　　 　 （　ヽノ<br>
-        
-        　　　　　　 ﾉ>ノ<br>
-        
-        　　　 三　　レﾚ</p>
-            <script>
-        window.onload = function() {
-            console.log("こんなんに1時間も使ったあほですこんにちは");
-        };
-    </script>
+  <header class="hero">
+    <nav class="nav">
+      <h1 class="logo">PORTFOLIO</h1>
+
+      <div class="nav-links">
+        <a href="#about">Profile</a>
+        <a href="#works">Works</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="label">Unity Developer / Game Creator</p>
+
+      <h2>
+        Tomi Okutani
+      </h2>
+
+      <p class="hero-text">
+        奥谷 斗泉<br>
+        バンタンゲームアカデミー大阪校高等部 プログラマー専攻
+      </p>
+
+      <a class="button" href="#works">
+        作品を見る
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section about" id="about">
+      <h2>Profile</h2>
+
+      <div class="profile-grid">
+
+        <div class="profile-info">
+          <dl class="profile-list">
+            <div>
+              <dt>名前</dt>
+              <dd>奥谷 斗泉</dd>
+            </div>
+            <div>
+              <dt>学校</dt>
+              <dd>バンタンゲームアカデミー大阪校 高等部</dd>
+            </div>
+            <div>
+              <dt>専攻</dt>
+              <dd>プログラマー専攻 3年次</dd>
+            </div>
+            <div>
+              <dt>希望職種</dt>
+              <dd>ゲームプログラマー</dd>
+            </div>
+            <div>
+              <dt>好きなゲーム</dt>
+              <dd>Minecraft</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="profile-skills" id="skills">
+
+          <h2>Skills</h2>
+          <div class="skill-group">
+            <h4>Game Engine</h4>
+            <div class="skill-tags">
+              <span>Unity</span>
+              <span>Unreal Engine(BP)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Programming</h4>
+            <div class="skill-tags">
+              <span>C#</span>
+              <span>C++</span>
+              <span>Python</span>
+              <span>HTML</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Tools</h4>
+            <div class="skill-tags">
+              <span>GitHub</span>
+              <span>Unitask</span>
+              <span>PhotoShop</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Interested In</h4>
+            <div class="skill-tags">
+              <span>Gameplay Programming</span>
+              <span>UI</span>
+              <span>AI</span>
+              <span>DDD</span>
+              <span>ECS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<section class="section works" id="works">
+
+  <h2>Featured Works</h2>
+
+  <div class="work-category">
+    <h3 class="work-category-title">個人製作</h3>
+
+    <div class="work-grid">
+
+    <!-- 個人制作 -->
+
+    <a href="work_snowsuvivor.html" class="card">
+
+      <div class="thumb">
+        <img src="images/SnowSuvivor.png" alt="3D Action Game">
+      </div>
+
+      <div class="work-tags">
+        <span>個人製作</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>雪サバイバー</h3>
+
+      <p>
+        Unityで制作した3Dアクションゲーム。
+        <br>雪合戦をモチーフにしました。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+        <a href="work_thinkball.html" class="card">
+
+      <div class="thumb">
+        <img src="images/thinkball_game.png" alt="3D Action Game">
+      </div>
+
+      <div class="work-tags">
+        <span>個人製作</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>ThinkBall</h3>
+
+      <p>
+        Unityで制作した物理演算2Dパズルゲームです。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+    </a>
+
+        <a href="work_slimeadventure.html" class="card">
+
+      <div class="thumb">
+        <img src="images/slimeadventure_title.png" alt="3D Action Game">
+      </div>
+
+      <div class="work-tags">
+        <span>個人製作</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>スライムアドベンチャー</h3>
+
+      <p>
+        Unityで制作した見下ろし型オープンワールドゲームです。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+    </div>
+  </div>
+
+  <div class="work-category">
+    <h3 class="work-category-title">チーム制作</h3>
+
+    <div class="work-grid">
+
+    <a href="work_libra.html" class="card">
+
+      <div class="thumb">
+        <img src="images/Libra_Title.png" alt="3D Action Game">
+      </div>
+
+      <div class="work-tags">
+        <span>Team Project</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>天秤</h3>
+
+      <p>
+        チーム制作として参加したゲーム。
+        <br>ノベル部分を担当しました。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+    <a href="work_tgs.html" class="card">
+
+      <div class="thumb">
+        COMING SOON
+      </div>
+
+      <div class="work-tags">
+        <span>Team Project</span>
+        <span>Unreal Engine</span>
+        <span>TGS2026</span>
+      </div>
+
+      <h3>TGSProject</h3>
+
+      <p>
+        現在制作中の、TGS（東京ゲームショウ）への出展を予定している作品です。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+    
+        <a href="work_kyatatsu.html" class="card">
+
+      <div class="thumb">
+        <img src="images/kyatatsu.png" alt="">
+      </div>
+
+      <div class="work-tags">
+        <span>Team Project</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>レスキューキャタツマン</h3>
+
+      <p>
+        初めてのチーム制作作品です。<br>
+        学校のゲームジャムイベントで作成しました。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+        </a>
+    
+        <a href="work_kaikai.html" class="card">
+
+      <div class="thumb">
+        <img src="images/kaikai_title.png" alt="">
+      </div>
+
+      <div class="work-tags">
+        <span>Team Project</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>怪界の祭り</h3>
+
+      <p>
+        <br>
+        学校のゲームジャムイベントで作成しました。<br>
+        2Dアドベンチャーゲームです。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+        </a>
+
+        </a>
+    
+        <a href="work_vrshooting.html" class="card">
+
+      <div class="thumb">
+        <img src="images/vrshooting.png" alt="">
+      </div>
+
+      <div class="work-tags">
+        <span>Team Project</span>
+        <span>Unity</span>
+        <span>MetaQuest</span>
+      </div>
+
+      <h3>VR射的</h3>
+
+      <p>
+        <br>
+        文化祭向けのVR射的ゲームを制作しました。<br>
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+    </div>
+  </div>
+
+  <div class="work-category">
+    <h3 class="work-category-title">インターンシップ</h3>
+
+    <div class="work-grid">
+
+    <a href="work_posthumors.html" class="card">
+
+      <div class="thumb">
+        <img class="thumb-image-top" src="images/posthumors.jpg" alt="3D Action Game">
+      </div>
+
+      <div class="work-tags">
+        <span>Internship</span>
+        <span>Unity</span>
+      </div>
+
+      <h3>Posthumors</h3>
+
+      <p>
+        インターン制作として参加したプロジェクト。
+        <br>UIから内部システムまで担当しました。
+      </p>
+
+      <span class="link-text">
+        詳細を見る →
+      </span>
+
+    </a>
+
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="section contact" id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-links">
+       <a class="contact-link" href="https://unityroom.com/users/b40xft1q9k2dpir8sv5j" target="_blank" rel="noopener">unityroom</a> 
+       <a class="contact-link" href="https://github.com/Miitomy103" target="_blank" rel="noopener">GitHub</a> 
+       <a class="contact-link" href="mailto:tomiokutani@gmail.com" target="_blank" rel="noopener">Mail</a> 
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Your Name</p>
+  </footer>
+
+  <script src="portfolio-navigation.js"></script>
 </body>
 </html>

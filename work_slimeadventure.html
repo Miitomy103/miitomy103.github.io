@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スライムアドベンチャー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="sub-header">
+    <a href="index.html" class="back-link">
+      ← Back
+    </a>
+
+    <h1>スライムアドベンチャー</h1>
+  </header>
+
+  <main class="work-detail">
+
+    <div class="main-visual">
+      <img src="images/slimeadventure_title.png" alt="">
+    </div>
+
+    <section class="detail-section">
+      <h2>Overview</h2>
+
+      <p>
+        Unityで制作した見下ろし型オープンワールドゲームです。<br>
+        スライムは憑依をすることでいろんなキャラを操作できます。
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Information</h2>
+
+      <ul class="info-list">
+        <li><strong>制作期間：</strong>半年</li>
+        <li><strong>制作人数：</strong>個人制作</li>
+        <li><strong>使用技術：</strong>Unity / C# / UniTask / NavMesh</li>
+      </ul>
+    </section>
+
+    <section class="detail-section">
+      <h2>Implemented Features</h2>
+
+      <ul class="feature-list">
+        <li>汎用ステートマシンの自作</li>
+        <li>自作オブジェクトプール</li>
+        <li>Strategyパターンによる攻撃フレーム処理</li>
+        <li>CullingGroup API を使ったLODシステム</li>
+        <li>憑依システム（スライムが複数キャラクターに切り替わるコアゲームシステム）</li>
+        <li>クエストシステム</li>
+      </ul>
+    </section>
+
+    <section class="detail-section">
+      <h2>Point</h2>
+
+      <p>
+        「憑依」でさまざまなキャラクターに乗り移りながら探索するのがこのゲームの醍醐味です。<br>
+      </p>
+      <p>
+        切り替わる各キャラクターの挙動を一元管理するため、ジェネリクスで汎用ステートマシンを自作し全キャラ共通で利用しています。
+        <br>
+        CullingGroup API による独自 LOD でオープンワールドの処理負荷を抑えました。
+      </p>
+    </section>
+
+
+      <div class="image-row">
+        <img src="images/slimeadventure_game.png" alt="">
+        <img src="images/slimeadventure_result.png" alt="">
+      </div>
+    </section>
+    
+
+  </main>
+
+  <script src="portfolio-navigation.js"></script>
+</body>
+</html>

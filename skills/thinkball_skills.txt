@@ -1,0 +1,113 @@
+================================================================
+  Shot Ball - ポートフォリオ 使用技術・工夫まとめ
+================================================================
+
+----------------------------------------------------------------
+■ エンジン・開発環境
+----------------------------------------------------------------
+
+  Unity (2D)          Universal Render Pipeline (URP) 14.0 使用
+  C#                  開発言語。namespace で ShotBall.InGame / ShotBall.Create /
+                      ShotBall.Data に整理
+  Visual Studio       IDE 連携
+  Git                 バージョン管理
+
+----------------------------------------------------------------
+■ 使用 Unity パッケージ
+----------------------------------------------------------------
+
+  TextMeshPro         高品質テキスト表示
+  Cinemachine         カメラ制御
+  Timeline            演出制御
+  Shader Graph        カスタムシェーダー
+  2D Tilemap          タイルマップ (TileMap Extras も使用)
+  2D Animation        スプライトアニメーション
+  2D Aseprite Importer  Aseprite ファイルの直接インポート
+  Physics 2D          物理演算
+  Unity Recorder      録画・キャプチャツール
+
+----------------------------------------------------------------
+■ 設計パターン・アーキテクチャ
+----------------------------------------------------------------
+
+  Singleton
+    MouseInputHandler.Instance, Inspector.Instance など
+    シーン内の一意なシステムへのグローバルアクセスを実現
+
+  抽象クラス・継承
+    ActionBehaviour, AreaBase, GridDataBase, GimmickBase
+    ギミックの共通処理をベースクラスに集約し拡張しやすい構造
+
+  インターフェース設計
+    IGridData, IOnOff, IAntiGravity, IChangeText,
+    ISetValue<T>, IStageBlockData, IBlockData, IResize など多数
+    実装の詳細を隠蔽し、疎結合な設計を実現
+
+  Observer パターン (イベント駆動)
+    C# の Action デリゲートを活用
+    UpdateObjects, DeleteAction, floatSet, intSet, boolSet など
+    コンポーネント間の依存を減らした通知処理
+
+  ジェネリックインターフェース
+    ISetValue<float>, ISetValue<int>, ISetValue<bool>,
+    ISetValue<Vector2>, ISetValue<Vector3>
+    型安全な UI とデータの連携を統一的に実現
+
+----------------------------------------------------------------
+■ ゲームシステムの工夫
+----------------------------------------------------------------
+
+  インゲームエディタ機能
+    プレイヤーが自分でステージを作れる編集システムを実装
+    Inspector, CreateObject, Frame, GenerateObject などで構成
+    ブロックの配置・パラメータ設定・保存までをゲーム内で完結
+
+  汎用パラメータシステム (StageBlockData)
+    Dictionary<string, float / int / bool / Vector2 / Vector3> で
+    ブロックの全パラメータを動的に管理
+    新しいブロックを追加してもコードの変更が最小限で済む設計
+
+  ScriptableObject 活用
+    ブロック定義をアセットデータとして管理 (Parametors クラス)
+    CreateAssetMenu でエディタから直接作成可能
+
+  JSON シリアライズによるデータ永続化
+    JsonUtility を使ったステージデータの保存・読み込み
+    StageData.json としてファイル出力し、ステージ共有にも対応
+
+  カスタム Editor 拡張
+    ReadOnlyAttribute / ReadOnlyDrawer でインスペクタの表示制御
+    EditorDraggableObjectEditor などでエディタ操作を改善
+
+  Physics 2D 活用
+    Raycast によるマウスクリック検出
+    OnTriggerEnter2D / OnTriggerExit2D でギミックの当たり判定処理
+
+  コルーチン
+    UpdateCoroutine, WaitOneFrame など
+    フレームをまたぐ非同期処理を適切にコントロール
+
+  カメラキャプチャ
+    ステージのサムネイルを自動生成する機能 (CaptureStage)
+
+----------------------------------------------------------------
+■ ポートフォリオで特にアピールできるポイント
+----------------------------------------------------------------
+
+  1. 自作ステージエディタ
+       ただのゲームではなく、ゲーム内でステージを編集・保存・
+       読み込みできるエディタ機能を実装している点が差別化になる
+
+  2. インターフェース・抽象クラスを使った拡張性ある設計
+       新しいギミックや UI パーツを追加しやすい構造になっており、
+       オブジェクト指向設計への理解を示せる
+
+  3. データドリブンなパラメータ管理
+       StageBlockData の Dictionary 設計と ISetValue<T> による
+       型ごとの UI 連携は、柔軟かつ型安全な設計力を示す
+
+  4. URP + Shader Graph
+       レンダリングパイプラインへの理解と、
+       見た目のクオリティへの意識をアピールできる
+
+================================================================
